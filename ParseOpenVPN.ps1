@@ -121,7 +121,6 @@ $exported += $content | Select-String -NotMatch -Pattern $retls  | `
                             Select-String -NotMatch -Pattern $repkcs | `
                             Select-String -NotMatch -Pattern '^#'    | `
                             Select-String -NotMatch -Pattern '^;'
-#$exported += ""
 
 [System.IO.FileSystemInfo]$ar = Get-ChildItem -Path ($tunnels[$resp-1])
 [string]$dir = $ar.Directory.FullName
@@ -174,7 +173,7 @@ if ($a -ne $null -and $a -match $retls) {
     $exported += "</tls-auth>"
 }
 
-# Obtener nombre archivo
+# Get filename
 [int]$beg = 1 + $tun.LastIndexOf('\')
 [string]$fSal = $tun.Substring($beg)
 
